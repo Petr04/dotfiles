@@ -1,0 +1,71 @@
+* {
+    backgroundcolor: #242829;
+    foregroundcolor: #eee;
+    foregroundcolorinverse: #eee;
+    selectioncolor: #484a4b;
+    padding-var: 14px;
+
+
+    font-size: 10px;
+    background-color: @backgroundcolor;
+    text-color: @foregroundcolor;
+    margin: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    spacing: 0;
+}
+
+#listview {
+    spacing: 0;
+    scrollbar: false;
+    margin: 0;
+    dynamic: true;
+
+}
+
+#window {
+    background-color: @backgroundcolor;
+    border-radius: 0px;
+}
+
+#mainbox {
+    padding: 0;
+    background-color: @backgroundcolor;
+}
+
+#element {
+    padding: @padding-var;
+    background-color: @backgroundcolor;
+}
+
+#element.selected.normal {
+    background-color: @selectioncolor;
+    text-color: @foregroundcolorinverse;
+    border-radius: 0px;
+
+}
+
+#element.alternate.normal {
+    background-color: @backgroundcolor;
+}
+
+#element.selected.active {
+    background-color: @selectioncolor;
+    text-color: @foregroundcolorinverse;
+    border-radius: 0px;
+
+}
+
+#inputbar {
+    margin: 0;
+    spacing: 0;
+}
+
+#prompt {
+    padding: @padding-var;
+    background-color: @backgroundcolor;
+}
+
+#entry {
+    padding: @padding-var;
+}

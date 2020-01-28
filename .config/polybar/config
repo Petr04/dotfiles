@@ -15,9 +15,7 @@ padding-right = 2
 module-margin-left = 3
 module-margin-right = 3
 
-font-0 = fixed:pixelsize=9;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=9;1
+font-0 = Roboto:pixelsize=9;2
 
 modules-left = i3
 modules-right = pulseaudio battery keyboard date
@@ -30,7 +28,7 @@ tray-position = right
 
 [module/date]
 type = internal/date
-interval = 1.0
+interval = 20.0
 
 date = %a, %e %b
 time = %H:%M
@@ -41,8 +39,6 @@ label = %date% %time%
 
 [module/battery]
 type = internal/battery
-; Use the following command to list batteries and adapters:
-; $ ls -1 /sys/class/power_supply/
 battery = BAT1
 adapter = ACAD
 label-discharging = %percentage%% discharg
@@ -52,19 +48,9 @@ label-full = %percentage%% full
 [module/i3]
 type = internal/i3
 
-; Available tokens:
-;   %mode%
-; Default: %mode%
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = #e60053
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
+label-mode-background = #bd2c40
 
 label-focused = %index%
 label-focused-foreground = #ffffff
@@ -78,51 +64,26 @@ label-visible = %index%
 label-visible-padding = 4
 
 label-urgent = %index%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
+label-urgent-foreground = #e53c70
+;label-urgent-background = #bd2c40
 label-urgent-padding = 4
 
 [module/title]
 type = internal/xwindow
 
-; Available tags:
-;   <label> (default)
 format = <label>
 format-padding = 4
 
-; Available tokens:
-;   %title%
-; Default: %title%
 label = %title%
-; label-maxlen = 50
-
-; Used instead of label when there is no window title
-; Available tokens:
-;   None
-; label-empty = Empty
-; label-empty-foreground = #707880
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
-; If not, uses default sink
-; sink = alsa_output.pci-0000_12_00.3.analog-stereo
 sink = 0
 
-; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
-; Default: true
 use-ui-max = true
 
-; Interval for volume increase/decrease (in percent points)
-; Default: 5
 interval = 5
-
-; Available tags:
-;   <label-volume> (default)
-;   <ramp-volume>
-;   <bar-volume>
-; format-volume = <ramp-volume> <label-volume>
 
 label-volume = vol %percentage%%
 label-muted = vol muted
@@ -130,6 +91,8 @@ label-muted = vol muted
 [module/keyboard]
 type = internal/xkeyboard
 
-; List of indicators to ignore
+label-layout = %layout%
+label-indicator = %name%
+
 blacklist-0 = num lock
 blacklist-1 = scroll lock

@@ -8,5 +8,5 @@ rofi.padding:               0
 rofi.separator-style:       none
 rofi.hide-scrollbar:        true
 rofi.line-margin:           0
-rofi.font:                  sans-serif 10
-rofi.theme: /usr/share/rofi/themes/custom-nord.rasi
+rofi.font: 					Roboto 11
+rofi.theme: ~/.config/rofi/themes/theme.rasi
